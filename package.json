@@ -1,0 +1,19 @@
+{
+  "name": "asteroidnextgen",
+  "version": "1.0.0",
+  "description": "Asteroid game",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnthemNextGen/AsteroidNextGen.git"
+  },
+  "author": "NextGen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnthemNextGen/AsteroidNextGen/issues"
+  },
+  "homepage": "https://github.com/AnthemNextGen/AsteroidNextGen#readme"
+}
