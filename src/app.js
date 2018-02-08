@@ -1,7 +1,7 @@
 
 import {sayHello, User} from './utils/functions';
 import {Game} from './utils/game';
-const greeting = 'Hello World';
+const greeting = 'Welcome NextGen';
 console.log(greeting);
 sayHello();
 
