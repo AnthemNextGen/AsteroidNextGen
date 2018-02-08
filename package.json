@@ -1,14 +1,14 @@
 {
   "name": "babel_webpack_starter",
   "version": "1.0.0",
-  "description": "Starter pack for compiling ES6+ apps to ES5",
+  "description": "Asteroid Game by NextGen",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
     "start": "webpack-dev-server --output-public-path=/game/"
   },
-  "author": "Brad Traversy",
+  "author": "Anthem NextGen",
   "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.26.0",
