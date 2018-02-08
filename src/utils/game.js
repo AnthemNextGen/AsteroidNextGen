@@ -1,5 +1,4 @@
 import ioClient from 'socket.io-client'
-
 export class Game{
   constructor(){
   let io = ioClient('localhost:5000');
