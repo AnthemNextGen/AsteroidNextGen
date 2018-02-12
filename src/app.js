@@ -1,5 +1,5 @@
-import {Game,splashScreen, gameScreen} from './utils/game';
-document.addEventListener('keyup', function(event){
+import {Game,splashScreen, gameScreen, gameCtx} from './utils/game';
+document.addEventListener('keyup', (event)=>{
     if(event.keyCode == 32){
       splashScreen.className += 'fadesplash';
       setTimeout(function(){
@@ -13,9 +13,14 @@ document.addEventListener('keyup', function(event){
       */
       //let playerName = prompt('Enter Player Name');  We can fetch player name
       setTimeout(function(){
+        gameCtx.fillStyle = "teal";
+        gameCtx.fillRect(0,0,innerWidth,innerHeight);
         const game = new Game();
         game.play();
-      }, 3000);
+        // game.pause(function(){
+        //   console.log('Game Paused');
+        // });
+      }, 2000);
 
 
     }
