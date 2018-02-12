@@ -12,7 +12,7 @@ h1{
   margin: 10% 0% 0% 0%;
   font-size: 70px;
   color: #000000;
-  -webkit-text-stroke: 2px white;
+  -webkit-text-stroke: 3px white;
   animation: fadeIn 5s;
 }
 
@@ -44,6 +44,9 @@ h1{
   color: #000000;
   -webkit-text-stroke: 0.5px white;
   animation: fadeIn 10s;
+  position: absolute;
+  bottom: 0;
+  width: 100%
 }
 
 @keyframes fadeIn {
@@ -71,6 +74,7 @@ body{
   margin: 0;
   padding: 0;
 }
+
 video{
   position: absolute;
   top:50%;
