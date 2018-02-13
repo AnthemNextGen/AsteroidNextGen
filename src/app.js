@@ -1,9 +1,12 @@
 import { Game, splashScreen, gameScreen, gameCtx } from './utils/game';
 import { audioUrl, playMusic, pauseMusic } from './utils/music';
 
-if (splashScreen) {
-  playMusic(audioUrl);
+if (splashScreen || gameOverScreen) {
+//playMusic(audioUrl)
+musicVolume(audio);
 }
+
+
 
 document.addEventListener('keyup', (event) => {
   if (event.keyCode == 32) {
@@ -11,6 +14,7 @@ document.addEventListener('keyup', (event) => {
     setTimeout(function () {
       splashScreen.style.display = 'none';
       gameScreen.style.display = 'block';
+      pauseMusic(audioUrl);
     }, 2000);
 
     /* At this point we dont want the game to start playing before we see

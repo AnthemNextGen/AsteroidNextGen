@@ -10,6 +10,50 @@
 </head>
 
 <body>
+
+  <script>
+    var audioUrl = "./assets/Videogame2.wav";
+    var audio = document.createElement('audio');
+    audio.src = audioUrl;
+    var soundPauseIcon = '<img src="assets/pauseVolumeIcon.png" height="42" width="42" />';
+    var soundPlayIcon = '<img src="assets/playVolumeIcon.png" height="42" width="42" />';
+
+    function playMusic(audioUrl) {
+      if (audioUrl) {
+        audio.play();
+        audio.loop = true;
+        return true;
+      } else {
+        return false
+      }
+    }
+
+    function pauseMusic(audioUrl) {
+      if (audioUrl) {
+        audio.pause();
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+    function musicVolume(audio) {
+      var button = document.getElementById('play');
+      if (audio && audio.paused) {
+        playMusic(audioUrl);
+        button.innerHTML = soundPauseIcon;
+        return true;
+      } else if (audio && audio.play) {
+        pauseMusic(audioUrl);
+        button.innerHTML = soundPlayIcon;
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+  </script>
+
   <div id="splash">
     <div id="musicDiv">
       <button id="play" onclick="musicVolume(audio)"><img src='assets/pauseVolumeIcon.png' height="42" width="42"></button>
@@ -20,6 +64,7 @@
     <div id="startPrompt">Press SPACE to Start</div>
     <div id="copyright">copyright © 2018, NextGen Broker Team</div>
   </div>
+
   <canvas id="game">
   </canvas>
   <!--Game Over screen  -->
@@ -28,7 +73,7 @@
   </div>
 
   <script src="game/app.bundle.js"></script>
-  <srcipt src="music.js"></srcipt>
+  
 </body>
 
 </html>
