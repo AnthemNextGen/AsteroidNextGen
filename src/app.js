@@ -1,4 +1,11 @@
 import {Game,splashScreen, gameScreen, gameCtx} from './utils/game';
+import {audio,audioUrl,playMusic,pauseMusic,musicVolume, soundPauseIcon, soundPlayIcon} from './utils/music';
+
+if(splashScreen){ 
+ // playMusic(audioUrl);
+  musicVolume(audio);
+}
+
 document.addEventListener('keyup', (event)=>{
     if(event.keyCode == 32){
       splashScreen.className += 'fadesplash';
@@ -17,6 +24,7 @@ document.addEventListener('keyup', (event)=>{
         gameCtx.fillRect(0,0,innerWidth,innerHeight);
         const game = new Game();
         game.play();
+        pauseMusic(audioUrl);
         // game.pause(function(){
         //   console.log('Game Paused');
         // });
