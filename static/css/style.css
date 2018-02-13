@@ -11,7 +11,6 @@ body{
   display: "none";
 }
 
-
 #title{
   display: "none";
   font-family: "Lucida Console", "Times New Roman";
@@ -208,27 +207,4 @@ video{
     animation: drawback 3s;
   }
   
-  @keyframes drawback{
-    0%{
-      transform : scale(1.1);
-    }
-    20%{
-      transform: scale(0.8);
-    }
-    50%{
-      opacity: 0.6;
-      transform: scale(0.5);
-    }
-    90%{
-      transform: scale(0.1);
-      opacity: 0.2;
-    }
-  
-    100%{
-      opacity: 0;
-      transform: scale(0);
-      display: none;
-    }
-  }
-
 }
