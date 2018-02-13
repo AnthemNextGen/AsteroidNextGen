@@ -24,7 +24,7 @@ export function pauseMusic(audioUrl) {
 }
 
 export function musicVolume(audio) {
-  var button = document.getElementById("play");
+  var button = document.getElementById('play');
   if (audio && audio.paused) {
     playMusic(audioUrl);
     button.innerHTML = soundPauseIcon;
