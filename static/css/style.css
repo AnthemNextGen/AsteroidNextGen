@@ -7,10 +7,6 @@ body{
   padding: 0;
 }
 
-#game{
-  display: "none";
-}
-
 #title{
   display: "none";
   font-family: "Lucida Console", "Times New Roman";
