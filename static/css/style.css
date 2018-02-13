@@ -7,11 +7,10 @@ body{
   padding: 0;
 }
 
-
 #title{
   font-family: "Lucida Console", "Times New Roman";
   text-align: center;
-  padding: 10% 2% 2% 0%;
+  padding: 5% 2% 2% 0%;
   font-size: 8vw;
   color: #000000;
   -webkit-text-stroke: 3px white;
@@ -48,7 +47,7 @@ body{
   animation: fadeIn 10s;
   position: fixed;
   bottom: 0;
-  width: 100%
+  width: 100%;
 }
 
 @keyframes fadeIn {
@@ -172,8 +171,6 @@ video{
     color: #000000;
     -webkit-text-stroke: 0.5px white;
     animation: fadeIn 10s;
-    position: fixed;
-    bottom: 0;
     width: 100%
   }
   
