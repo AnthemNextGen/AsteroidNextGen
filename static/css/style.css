@@ -7,15 +7,12 @@ body{
   padding: 0;
 }
 
-h1{
-  margin-left: 40%;
-}
-
 #title{
+  display: "none";
   font-family: "Lucida Console", "Times New Roman";
   text-align: center;
-  margin: 10% 0% 0% 0%;
-  font-size: 3em;
+  padding: 5% 2% 2% 0%;
+  font-size: 8vw;
   color: #000000;
   -webkit-text-stroke: 3px white;
   animation: fadeIn 5s;
@@ -24,8 +21,8 @@ h1{
 #welcome{
   font-family: "Lucida Console", "Times New Roman";
   text-align: center;
-  margin: 5% 0% 0% 0%;
-  font-size: 2.5em;
+  padding: 2% 0% 0% 0%;
+  font-size: 6vw;
   color: #000000;
   -webkit-text-stroke: 2px white;
   animation: fadeIn 10s;
@@ -34,8 +31,8 @@ h1{
 #startPrompt{
   font-family: "Lucida Console", "Times New Roman";
   text-align: center;
-  margin: 5% 0% 0% 0%;
-  font-size: 1em;
+  padding: 10% 0% 0% 0%;
+  font-size: 2vw;
   color: #000000;
   -webkit-text-stroke: 1px white;
   animation: delayedFadeIn 5s;
@@ -44,14 +41,14 @@ h1{
 #copyright{
   font-family: "Lucida Console", "Times New Roman";
   text-align: center;
-  margin: 5% 0% 0% 0%;
-  font-size: 0.5em;
+  margin: 10% 0% 0% 0%;
+  font-size: 1.2vw;
   color: #000000;
   -webkit-text-stroke: 0.5px white;
   animation: fadeIn 10s;
   position: fixed;
   bottom: 0;
-  width: 100%
+  width: 100%;
 }
 
 @keyframes fadeIn {
@@ -87,7 +84,6 @@ video{
   transform: translate(-50%,-50%);
   min-width:100%;
   min-height:100%;
-
 }
 
 .video-page{
@@ -123,11 +119,6 @@ video{
   }
 }
 
-
-
-
-
-
 /* for mobile devices */
 @media screen and (max-width:650px) {
   html{
@@ -146,18 +137,18 @@ video{
   #title{
     font-family: "Lucida Console", "Times New Roman";
     text-align: center;
-    margin: 30% 0% 0% 0%;
-    font-size: 2em;
+    padding: 10% 2% 2% 0%;
+    font-size: 8vw;
     color: #000000;
-    -webkit-text-stroke: 3px #FAED00;
+    -webkit-text-stroke: 3px white;
     animation: fadeIn 5s;
   }
   
   #welcome{
     font-family: "Lucida Console", "Times New Roman";
     text-align: center;
-    margin: 5% 0% 0% 0%;
-    font-size: 1.5em;
+    padding: 2% 0% 0% 0%;
+    font-size: 6vw;
     color: #000000;
     -webkit-text-stroke: 2px white;
     animation: fadeIn 10s;
@@ -166,8 +157,8 @@ video{
   #startPrompt{
     font-family: "Lucida Console", "Times New Roman";
     text-align: center;
-    margin: 40% 0% 0% 0%;
-    font-size: 1em;
+    padding: 10% 0% 0% 0%;
+    font-size: 2vw;
     color: #000000;
     -webkit-text-stroke: 1px white;
     animation: delayedFadeIn 5s;
@@ -176,35 +167,11 @@ video{
   #copyright{
     font-family: "Lucida Console", "Times New Roman";
     text-align: center;
-    margin: 5% 0% 0% 0%;
-    font-size: .75em;
+    font-size: 1.2vw;
     color: #000000;
     -webkit-text-stroke: 0.5px white;
     animation: fadeIn 10s;
-    position: fixed;
-    bottom: 0;
     width: 100%
-  }
-  
-  @keyframes fadeIn {
-      0% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
-  }
-  
-  @keyframes delayedFadeIn {
-    0% {
-      opacity: 0;
-    }
-    75% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
   }
   
   body{
@@ -235,27 +202,4 @@ video{
     animation: drawback 3s;
   }
   
-  @keyframes drawback{
-    0%{
-      transform : scale(1.1);
-    }
-    20%{
-      transform: scale(0.8);
-    }
-    50%{
-      opacity: 0.6;
-      transform: scale(0.5);
-    }
-    90%{
-      transform: scale(0.1);
-      opacity: 0.2;
-    }
-  
-    100%{
-      opacity: 0;
-      transform: scale(0);
-      display: none;
-    }
-  }
-
 }
