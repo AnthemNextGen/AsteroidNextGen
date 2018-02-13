@@ -7,7 +7,13 @@ body{
   padding: 0;
 }
 
+#game{
+  display: "none";
+}
+
+
 #title{
+  display: "none";
   font-family: "Lucida Console", "Times New Roman";
   text-align: center;
   padding: 5% 2% 2% 0%;
@@ -83,7 +89,6 @@ video{
   transform: translate(-50%,-50%);
   min-width:100%;
   min-height:100%;
-
 }
 
 .video-page{
@@ -172,27 +177,6 @@ video{
     -webkit-text-stroke: 0.5px white;
     animation: fadeIn 10s;
     width: 100%
-  }
-  
-  @keyframes fadeIn {
-      0% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
-  }
-  
-  @keyframes delayedFadeIn {
-    0% {
-      opacity: 0;
-    }
-    75% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
   }
   
   body{
