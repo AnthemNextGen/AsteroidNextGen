@@ -12,19 +12,17 @@
   "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
+    "babel-loader": "^6.0.0",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-stage-0": "^6.24.1",
-    "webpack": "^3.8.1",
-    "babel-loader": "^5.0.0",
-    "webpack": "^1.8.4",
+    "jasmine": "^2.2.1",
     "jasmine-core": "^2.2.0",
     "karma": "^0.13.2",
     "karma-jasmine": "^0.3.5",
-    "jasmine": "^2.2.1",
     "karma-phantomjs-launcher": "^0.1.4",
-    "karma-webpack": "^1.6.0"
+    "karma-webpack": "^1.6.0",
+    "webpack": "^3.11.0"
   },
   "dependencies": {
     "concurrently": "^3.5.1",
