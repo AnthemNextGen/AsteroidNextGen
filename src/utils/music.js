@@ -3,14 +3,18 @@ export const audioUrl = "./assets/Videogame2.wav";
 export const audio = document.createElement('audio');
 audio.src = audioUrl;
 export const button = document.getElementById('play');
+var isSound = false;
 
 export function playMusic(audioUrl) {
-  if (audioUrl) {
-    audio.play();
-    audio.loop = true;
+  if (audioUrl && audio.paused) {
+   audio.play(),
+    audio.loop = true,
+    isSound = true;
     return true;
-  } else {
-    return false
+  } else if(audioUrl && audio.play) {
+   audio.pause(),
+    isSound = false;
+    return true;
   }
 }
 
@@ -25,18 +29,20 @@ export function pauseMusic(audioUrl) {
 
 if (splashScreen || gameOverScreen) {
   playMusic(audioUrl);
+  isSound == true;
+} else if (game.play){
+  playMusic(audioUrl);
+  isSound == false;
 }
 
 button.addEventListener('click', (event) => {
-  if (audio.play) {
-    pauseMusic(audioUrl);
-  };
+  if (isSound == true) {
+    playMusic(audioUrl);
+  }else if (isSound == false){
+    playMusic(audioUrl)
+  }
 })
 
-button.addEventListener('dblclick', (event) => {
-  if (audio.paused) {
-    playMusic(audioUrl);
-  };
-})
+
 
 
