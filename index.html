@@ -10,53 +10,9 @@
 </head>
 
 <body>
-
-  <script>
-    var audioUrl = "./assets/Videogame2.wav";
-    var audio = document.createElement('audio');
-    audio.src = audioUrl;
-    var soundPauseIcon = '<img src="assets/pauseVolumeIcon.png" height="42" width="42" />';
-    var soundPlayIcon = '<img src="assets/playVolumeIcon.png" height="42" width="42" />';
-
-    function playMusic(audioUrl) {
-      if (audioUrl) {
-        audio.play();
-        audio.loop = true;
-        return true;
-      } else {
-        return false
-      }
-    }
-
-    function pauseMusic(audioUrl) {
-      if (audioUrl) {
-        audio.pause();
-        return true;
-      } else {
-        return false;
-      }
-    }
-
-    function musicVolume(audio) {
-      var button = document.getElementById('play');
-      if (audio && audio.paused) {
-        playMusic(audioUrl);
-        button.innerHTML = soundPauseIcon;
-        return true;
-      } else if (audio && audio.play) {
-        pauseMusic(audioUrl);
-        button.innerHTML = soundPlayIcon;
-        return true;
-      } else {
-        return false;
-      }
-    }
-
-  </script>
-
   <div id="splash">
     <div id="musicDiv">
-      <button id="play" onclick="musicVolume(audio)"><img src='assets/pauseVolumeIcon.png' height="42" width="42"></button>
+      <button id="play"><img src='assets/pauseVolumeIcon.png' height="42" width="42"></button>
     </div>
     <video id="video" class="video-page" poster="" src="assets/giphy.mp4" type="video/mp4" display="none" autoplay="true" loop></video>
     <div id="title">NextGen Asteroids</div>
@@ -73,7 +29,7 @@
   </div>
 
   <script src="game/app.bundle.js"></script>
-  
+ 
 </body>
 
 </html>

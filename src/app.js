@@ -1,9 +1,8 @@
 import { Game, splashScreen, gameScreen, gameCtx } from './utils/game';
-import { audioUrl, playMusic, pauseMusic } from './utils/music';
+import { audioUrl, playMusic, pauseMusic, audio, musicVolume } from './utils/music';
 
 if (splashScreen || gameOverScreen) {
-//playMusic(audioUrl)
-musicVolume(audio);
+playMusic(audioUrl);
 }
 
 
