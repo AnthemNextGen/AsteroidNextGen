@@ -1,4 +1,4 @@
-import { Game, splashScreen, gameScreen } from '../utils/game';
+import {splashScreen } from '../utils/game';
 export const audioUrl = "./assets/Videogame2.wav";
 export const audio = document.createElement('audio');
 audio.src = audioUrl;
@@ -25,10 +25,6 @@ export function pauseMusic(audioUrl) {
 
 if (splashScreen || gameOverScreen) {
   playMusic(audioUrl);
-}
-
-if (game.play) {
-  pauseMusic(audioUrl);
 }
 
 button.addEventListener('click', (event) => {
