@@ -1,11 +1,9 @@
 import { Game, splashScreen, gameScreen, gameCtx } from './utils/game';
-import { audioUrl, playMusic, pauseMusic, audio, musicVolume } from './utils/music';
+import { audioUrl, playMusic, pauseMusic, audio, button, soundPauseIcon, soundPlayIcon, musicVolume } from './utils/music';
 
 if (splashScreen || gameOverScreen) {
-playMusic(audioUrl);
+  playMusic(audioUrl);
 }
-
-
 
 document.addEventListener('keyup', (event) => {
   if (event.keyCode == 32) {
@@ -13,7 +11,7 @@ document.addEventListener('keyup', (event) => {
     setTimeout(function () {
       splashScreen.style.display = 'none';
       gameScreen.style.display = 'block';
-      pauseMusic(audioUrl);
+     // pauseMusic(audioUrl);
     }, 2000);
 
     /* At this point we dont want the game to start playing before we see
@@ -31,7 +29,5 @@ document.addEventListener('keyup', (event) => {
       //   console.log('Game Paused');
       // });
     }, 2000);
-
-
   }
 });

@@ -1,8 +1,8 @@
 export const audioUrl = "./assets/Videogame2.wav";
 export const audio = document.createElement('audio');
 audio.src = audioUrl;
-export const soundPauseIcon = '<img src="assets/pauseVolumeIcon.png" height="42" width="42" />';
-export const soundPlayIcon = '<img src="assets/playVolumeIcon.png" height="42" width="42" />';
+export const soundPauseIcon = '<img src="assets/pauseVolumeIcon.png" height="40" width="40" />';
+export const soundPlayIcon = '<img src="assets/playVolumeIcon.png" height="40" width="40" />';
 
 export function playMusic(audioUrl) {
   if (audioUrl) {
@@ -23,26 +23,23 @@ export function pauseMusic(audioUrl) {
   }
 }
 
-var musicControl = function musicVolume(audio) {
-  
-  if (audio && audio.paused) {
-    playMusic(audioUrl);
+window.onload = function musicVolume(audioUrl) {
+  var button = document.getElementById("play");
+  button.ondblclick = function () {
+    if (!playMusic(audioUrl)) {
+      playMusic(audioUrl);
+      return true;
+    }
     button.innerHTML = soundPauseIcon;
-    return true;
-  } else if (audio && audio.play) {
-    pauseMusic(audioUrl);
+  };
+  button.onclick = function () {
+    if (!pauseMusic(audioUrl)) {
+      pauseMusic(audioUrl);
+      return true;
+    };
     button.innerHTML = soundPlayIcon;
-    return true;
-  } else {
-    return false; 
   }
 }
 
-var button = document.getElementById("play");
-button.addEventListener("click", musicControl ); 
 
-if(button.addEventListener){
-  button.addEventListener('click', musicControl);    
-} else if(button.attachEvent){
-  button.attachEvent('onclick', musicControl);
-}
+
