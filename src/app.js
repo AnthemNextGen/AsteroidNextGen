@@ -1,11 +1,13 @@
 import {Game,splashScreen, gameScreen, gameCtx} from './utils/game';
-document.addEventListener('keyup', (event)=>{
-    if(event.keyCode == 32){
+import {controls} from './utils/controls';
+document.body.addEventListener('keyup', (event)=>{
+    if(event.keyCode == controls.startKey){
       splashScreen.className += 'fadesplash';
       setTimeout(function(){
         splashScreen.style.display = 'none';
         gameScreen.style.display = 'block';
       }, 2000);
+
 
       /* At this point we dont want the game to start playing before we see
           the game screen so we use a delay to give room for our transition
@@ -15,6 +17,7 @@ document.addEventListener('keyup', (event)=>{
       setTimeout(function(){
         gameCtx.fillStyle = "teal";
         gameCtx.fillRect(0,0,innerWidth,innerHeight);
+        splashScreen.className = "";
         const game = new Game();
         game.play();
         // game.pause(function(){
