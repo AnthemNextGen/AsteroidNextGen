@@ -1,8 +1,7 @@
 export const audioUrl = "./assets/Videogame2.wav";
 export const audio = document.createElement('audio');
 audio.src = audioUrl;
-export const soundPauseIcon = '<img src="assets/pauseVolumeIcon.png" height="40" width="40" />';
-export const soundPlayIcon = '<img src="assets/playVolumeIcon.png" height="40" width="40" />';
+export const button = document.getElementById('play');
 
 export function playMusic(audioUrl) {
   if (audioUrl) {
@@ -23,23 +22,16 @@ export function pauseMusic(audioUrl) {
   }
 }
 
-window.onload = function musicVolume(audioUrl) {
-  var button = document.getElementById("play");
-  button.ondblclick = function () {
-    if (!playMusic(audioUrl)) {
-      playMusic(audioUrl);
-      return true;
-    }
-    button.innerHTML = soundPauseIcon;
+button.addEventListener('click', (event) => {
+  if (audio.play) {
+    pauseMusic(audioUrl);
   };
-  button.onclick = function () {
-    if (!pauseMusic(audioUrl)) {
-      pauseMusic(audioUrl);
-      return true;
-    };
-    button.innerHTML = soundPlayIcon;
-  }
-}
+})
 
+button.addEventListener('dblclick', (event) => {
+  if (audio.paused) {
+    playMusic(audioUrl);
+  };
+})
 
 
