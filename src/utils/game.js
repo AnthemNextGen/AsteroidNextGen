@@ -12,18 +12,32 @@ var movement = {
 }
 document.addEventListener('keydown', function(event) {
   switch (event.keyCode) {
-    case 65: // A
+    case 65: // A to move Left
       movement.left = true;
       break;
-    case 87: // W
+    case 87: // W  to move Up
       movement.up = true;
       break;
-    case 68: // D
+    case 68: // D to move right
       movement.right = true;
       //console.log(movement.right);
       break;
-    case 83: // S
+    case 83: // S to move down
       movement.down = true;
+      break;
+    case 37:
+      console.log('Rotate anti-clockwise');
+      break;
+    case 38:
+      movement.up = true;
+      console.log('Move up');
+      break;
+    case 39:
+      console.log('Rotate Clockwise');
+      break;
+    case 40:
+      movement.down = true;
+      console.log('Move down');
       break;
   }
 });
@@ -44,6 +58,20 @@ document.addEventListener('keyup', function(event) {
     case 32:
       alert('Shoot...');
       break;
+    case 37:
+        console.log('Rotate anti-clockwise');
+        break;
+    case 38:
+        movement.up = false;
+        console.log('Move up');
+        break;
+    case 39:
+        console.log('Rotate Clockwise');
+        break;
+    case 40:
+        movement.down = false;
+        console.log('Move down');
+        break;
   }
 });
 
@@ -54,7 +82,7 @@ export class Game{
   }
 
   play(){
-    // GAme Code goes Here
+    // Game Code goes Here
     const sock = this.io;
     this.io.emit('new player');
     this.io.emit('join', "A player Joinned");
@@ -66,7 +94,7 @@ export class Game{
     this.io.on('state', function(players) {
         console.log(players);
         gameCtx.clearRect(50, 50, innerWidth, innerHeight);
-        gameCtx.fillStyle = 'green';
+        gameCtx.fillStyle = 'teal';
         gameCtx.strokeRect(10,10, innerWidth - 50, innerHeight-50);
         for (var id in players) {
           var player = players[id];
