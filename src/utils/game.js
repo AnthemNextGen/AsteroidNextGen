@@ -75,26 +75,6 @@ document.addEventListener('keyup', function(event) {
   }
 });
 
-function drawShip() {
-  // the triangle
-  gameCtx.beginPath();
-  gameCtx.moveTo(200, 100);
-  gameCtx.lineTo(170, 150);
-  gameCtx.lineTo(230, 150);
-  gameCtx.closePath();
-
-  // the outline
-  gameCtx.lineWidth = 6;
-  gameCtx.strokeStyle = "rgba(102, 102, 102, 1)";
-  gameCtx.stroke();
-
-  // the fill color
-
-  gameCtx.fill();
-}
-
-
-
 
 // Jesse will be pissed with this: Refactor it.
 export class Game{
