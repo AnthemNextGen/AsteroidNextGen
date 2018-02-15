@@ -99,7 +99,8 @@ export class Game{
         for (var id in players) {
           var player = players[id];
           gameCtx.beginPath();
-          gameCtx.arc(player.x+20, player.y, 10, 0, 2 * Math.PI);
+          //gameCtx.arc(player.x+20, player.y, 10, 0, 2 * Math.PI);
+          gameCtx.fillRect(player.x, player.y, 20,20);
           gameCtx.fill();
         }
       });
