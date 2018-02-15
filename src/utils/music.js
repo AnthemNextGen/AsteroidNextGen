@@ -26,7 +26,7 @@ if (splashScreen || gameOverScreen) {
 
 if (audio.play) {
   document.addEventListener('keyup', (event) => {
-    if (event.keyCode == 32) {
+    if (event.keyCode == 13) {
       setTimeout(() => {
         audio.pause();
       }, 2000);
