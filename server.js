@@ -8,7 +8,8 @@ io.on('connection', function(socket) {
   socket.on('new player', function() {
     players[socket.id] = {
       x: 300,
-      y: 300
+      y: 300,
+      angle: 2
     };
   });
   socket.on('join', function(msg){
@@ -28,6 +29,13 @@ io.on('connection', function(socket) {
     }
     if (data.down) {
       player.y += 5;
+    }
+    if(data.clockwise){
+      player.angle += 2;
+    }
+
+    if(data.anticlockwise){
+      player.angle -= 2;
     }
   });
 });

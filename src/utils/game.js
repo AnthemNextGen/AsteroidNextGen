@@ -25,14 +25,14 @@ document.addEventListener('keydown', function(event) {
       movement.down = true;
       break;
     case 37:
-      console.log('Rotate anti-clockwise');
+      movement.anticlockwise = true;
       break;
     case 38:
       movement.up = true;
       console.log('Move up');
       break;
     case 39:
-      console.log('Rotate Clockwise');
+      movement.clockwise = true;
       break;
     case 40:
       movement.down = true;
@@ -59,18 +59,18 @@ document.addEventListener('keyup', function(event) {
       alert('Shoot...');
       break;
     case 37:
-        console.log('Rotate anti-clockwise');
+        movement.anticlockwise = false;
         break;
     case 38:
         movement.up = false;
         console.log('Move up');
         break;
     case 39:
-        console.log('Rotate Clockwise');
+        movement.clockwise = false;
         break;
     case 40:
         movement.down = false;
-        console.log('Move down');
+        //console.log('Move down');
         break;
   }
 });
@@ -118,8 +118,10 @@ export class Game{
         gameCtx.strokeRect(5,5, innerWidth-10, innerHeight-10);
         for (var id in players) {
           var player = players[id];
-          gameCtx.beginPath();
+          gameCtx.save();
+          gameCtx.rotate(player.angle *Math.PI/180);
           gameCtx.drawImage(ship, player.x, player.y);
+          gameCtx.restore();
           gameCtx.fill();
         }
       });
