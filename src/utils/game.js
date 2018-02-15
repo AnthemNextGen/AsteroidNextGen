@@ -4,6 +4,7 @@ import {movements as movement} from './controls';
 export const splashScreen = document.getElementById('splash');
 export const gameScreen = document.getElementById('game');
 export const gameCtx = gameScreen.getContext('2d');
+export const  ship = document.getElementById('ship');
 
 gameScreen.width = innerWidth;
 gameScreen.height = innerHeight;
@@ -74,6 +75,26 @@ document.addEventListener('keyup', function(event) {
   }
 });
 
+function drawShip() {
+  // the triangle
+  gameCtx.beginPath();
+  gameCtx.moveTo(200, 100);
+  gameCtx.lineTo(170, 150);
+  gameCtx.lineTo(230, 150);
+  gameCtx.closePath();
+
+  // the outline
+  gameCtx.lineWidth = 6;
+  gameCtx.strokeStyle = "rgba(102, 102, 102, 1)";
+  gameCtx.stroke();
+
+  // the fill color
+
+  gameCtx.fill();
+}
+
+
+
 
 // Jesse will be pissed with this: Refactor it.
 export class Game{
@@ -93,13 +114,12 @@ export class Game{
 
     this.io.on('state', function(players) {
         console.log(players);
-        gameCtx.clearRect(50, 50, innerWidth, innerHeight);
-        gameCtx.fillStyle = 'teal';
-        gameCtx.strokeRect(10,10, innerWidth - 50, innerHeight-50);
+        gameCtx.clearRect(0, 0, innerWidth, innerHeight);
+        gameCtx.strokeRect(5,5, innerWidth-10, innerHeight-10);
         for (var id in players) {
           var player = players[id];
           gameCtx.beginPath();
-          gameCtx.arc(player.x+20, player.y, 10, 0, 2 * Math.PI);
+          gameCtx.drawImage(ship, player.x, player.y);
           gameCtx.fill();
         }
       });
