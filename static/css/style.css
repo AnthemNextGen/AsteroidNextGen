@@ -9,7 +9,7 @@ body{
 
 #title{
   display: "none";
-  font-family: "Lucida Console", "Times New Roman";
+  font-family: "Lucida Console", "Arial";
   text-align: center;
   padding: 5% 2% 2% 0%;
   font-size: 8vw;
@@ -19,7 +19,7 @@ body{
 }
 
 #welcome{
-  font-family: "Lucida Console", "Times New Roman";
+  font-family: "Lucida Console", "Arial";
   text-align: center;
   padding: 2% 0% 5% 0%;
   font-size: 6vw;
@@ -48,13 +48,13 @@ text-align: center;
   border: 2px solid white;
   border-radius: 5px;
   padding: 1vw 5vw;
-  font-family: "Lucida Console", "Times New Roman";
+  font-family: "Lucida Console", "Arial";
   font-size: 2vw;
   animation: fadeIn 10s;
 }
 
 #startPrompt{
-  font-family: "Lucida Console", "Times New Roman";
+  font-family: "Lucida Console", "Arial";
   text-align: center;
   padding: 10% 0% 0% 0%;
   font-size: 2vw;
@@ -64,7 +64,7 @@ text-align: center;
 }
 
 #copyright{
-  font-family: "Lucida Console", "Times New Roman";
+  font-family: "Lucida Console", "Arial";
   text-align: center;
   margin: 10% 0% 0% 0%;
   font-size: 1.2vw;
