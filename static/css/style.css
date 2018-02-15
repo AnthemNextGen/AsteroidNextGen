@@ -53,6 +53,16 @@ text-align: center;
   animation: fadeIn 10s;
 }
 
+.menuButton:hover{
+  background-color: rgba(255, 238, 0, 0.308);
+}
+
+.menuButton:focus {
+  outline: none;
+  border: 2px solid rgb(255, 238, 0);
+}
+
+
 #startPrompt{
   font-family: "Lucida Console", "Arial";
   text-align: center;
