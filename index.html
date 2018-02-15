@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,17 +8,31 @@
   <link rel="stylesheet" href="/static/css/style.css">
   <title>NextGen Asteroids</title>
 </head>
+
 <body>
-<div id="splash">
-  <video id="video" class="video-page" poster="" src="assets/giphy.mp4" type="video/mp4" display = "none" autoplay="true"
-  loop ></video>
-  <div id="title">NextGen Asteroids</div>
-  <div id="welcome">Welcome!</div>
-  <div id="startPrompt">Press ENTER to Start</div>
-  <div id="copyright">copyright © 2018, NextGen Broker Team</div>
-</div>
-<canvas hidden id="game">
-</canvas>
+  <div id="splash">
+    <video id="video" class="video-page" poster="" src="assets/giphy.mp4" type="video/mp4" display="none" autoplay="true" loop></video>
+    <div id="title">NextGen Asteroids</div>
+    <div id="welcome">Welcome!</div>
+    
+    <div id="tableDiv">
+      <table>
+        <tr>
+          <td>
+            <button class="menuButton">PUBLIC</button>
+          </td>
+          <td>
+            <button class="menuButton">PRIVATE</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="startPrompt">Press ENTER to Start</div>
+    <div id="copyright">copyright © 2018, NextGen Broker Team</div>
+  </div>
+  <canvas hidden id="game">
+  </canvas>
   <!--Game Over screen  -->
   <div id="gameover">
     <video id="video" class="video-page" poster="" src="assets/giphy.mp4" type="video/mp4" display = "none" autoplay="true"
@@ -28,4 +43,5 @@
   <script src="src/utils/ship.js"></script>
   <script src="src/app.js"></script>
 </body>
+
 </html>
