@@ -6,5 +6,7 @@ export const movements = {
   up: false,
   down: false,
   left: false,
-  right: false
+  right: false,
+  clockwise : false,
+  anticlockwise: false
 }
