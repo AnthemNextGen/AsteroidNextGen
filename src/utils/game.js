@@ -1,15 +1,13 @@
 import ioClient from 'socket.io-client';
+import {movements as movement} from './controls';
+
 export const splashScreen = document.getElementById('splash');
 export const gameScreen = document.getElementById('game');
 export const gameCtx = gameScreen.getContext('2d');
+
 gameScreen.width = innerWidth;
 gameScreen.height = innerHeight;
-var movement = {
-  up: false,
-  down: false,
-  left: false,
-  right: false
-}
+
 document.addEventListener('keydown', function(event) {
   switch (event.keyCode) {
     case 65: // A to move Left
@@ -41,6 +39,7 @@ document.addEventListener('keydown', function(event) {
       break;
   }
 });
+
 document.addEventListener('keyup', function(event) {
   switch (event.keyCode) {
     case 65: // A
@@ -76,6 +75,7 @@ document.addEventListener('keyup', function(event) {
 });
 
 
+// Jesse will be pissed with this: Refactor it.
 export class Game{
   constructor(){
     this.io = ioClient('localhost:5000');
