@@ -1,5 +1,6 @@
 import ioClient from 'socket.io-client';
 import {movements as movement} from './controls';
+import {drawAsteroids} from './asteroids';
 
 export const splashScreen = document.getElementById('splash');
 export const gameScreen = document.getElementById('game');
@@ -96,9 +97,11 @@ export class Game{
         console.log(players);
         gameCtx.clearRect(0, 0, innerWidth, innerHeight);
         gameCtx.strokeRect(5,5, innerWidth-10, innerHeight-10);
+        drawAsteroids()
         for (var id in players) {
           var player = players[id];
           gameCtx.save();
+          gameCtx.translate(5 + innerWidth / 2, 5 + innerHeight / 2);
           gameCtx.rotate(player.angle *Math.PI/180);
           gameCtx.drawImage(ship, player.x, player.y);
           gameCtx.restore();
