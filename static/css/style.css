@@ -143,3 +143,9 @@ video{
     transform: scale(0);
     display: none;
   }}
+
+  #musicDiv {
+    position:fixed; 
+    bottom:0; 
+    right:0;
+  }
