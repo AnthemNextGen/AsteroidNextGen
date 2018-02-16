@@ -17,8 +17,6 @@ document.body.addEventListener('keyup', (event)=>{
       */
       //let playerName = prompt('Enter Player Name');  We can fetch player name
       setTimeout(function(){
-        // gameCtx.fillStyle = "teal";
-        // gameCtx.fillRect(0,0,innerWidth,innerHeight);
         splashScreen.className = "";
         const game = new Game();
           game.play();
