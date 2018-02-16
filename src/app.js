@@ -19,7 +19,5 @@ document.body.addEventListener('keyup', (event)=>{
         const game = new Game();
           game.play();
       }, 2000);
-
-
     }
 });

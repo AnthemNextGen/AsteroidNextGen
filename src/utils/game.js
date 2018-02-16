@@ -108,6 +108,19 @@ export class Game{
         for (var id in players) {
           var player = players[id];
           gameCtx.save();
+          if(player.posX > sceneWidth){
+            player.posX = sceneWidth - 20;
+          }
+          if(player.posX < 5){
+            player.posX = 10;
+          }
+
+          if(player.posY < 5){
+            player.posY = 10;
+          }
+          if(player.posY > sceneHeight){
+            player.posY = sceneHeight - 25;
+          }
           gameCtx.rotate(player.angle *Math.PI/180);
           drawShip(ship, player.posX, player.posY);
           gameCtx.restore();
