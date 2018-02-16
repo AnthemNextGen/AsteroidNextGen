@@ -7,8 +7,8 @@ var players = {};
 io.on('connection', (socket)=> {
   socket.on('new player', ()=> {
     players[socket.id] = {
-      x: 300,
-      y: 300,
+      posX: 300,
+      posY: 300,
       angle: 0
     };
   });
@@ -25,16 +25,16 @@ io.on('connection', (socket)=> {
   socket.on('movement', (data)=> {
     var player = players[socket.id] || {};
     if (data.left) {
-      player.x -= 5;
+      player.posX -= 5;
     }
     if (data.up) {
-      player.y -= 5;
+      player.posY -= 5;
     }
     if (data.right) {
-      player.x += 5;
+      player.posX += 5;
     }
     if (data.down) {
-      player.y += 5;
+      player.posY += 5;
     }
     if(data.clockwise){
       player.angle += 2;
