@@ -9,7 +9,7 @@ io.on('connection', function(socket) {
     players[socket.id] = {
       x: 300,
       y: 300,
-      angle: 2
+      angle: 0
     };
   });
   socket.on('join', function(msg){
