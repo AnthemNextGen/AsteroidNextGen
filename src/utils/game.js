@@ -1,11 +1,11 @@
 import ioClient from 'socket.io-client';
 import {movements as movement} from './controls';
+import {drawShip} from './ship';
 
 export const splashScreen = document.getElementById('splash');
 export const gameScreen = document.getElementById('game');
 export const gameCtx = gameScreen.getContext('2d');
 export const  ship = document.getElementById('ship');
-
 gameScreen.width = innerWidth;
 gameScreen.height = innerHeight;
 
@@ -100,7 +100,7 @@ export class Game{
           var player = players[id];
           gameCtx.save();
           gameCtx.rotate(player.angle *Math.PI/180);
-          gameCtx.drawImage(ship, player.x, player.y);
+          drawShip(ship, player.x, player.y);
           gameCtx.restore();
           gameCtx.fill();
         }
