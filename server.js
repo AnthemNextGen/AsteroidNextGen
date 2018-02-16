@@ -14,7 +14,13 @@ io.on('connection', function(socket) {
   });
   socket.on('join', function(msg){
     console.log(msg);
+    console.log(players);
   })
+
+  socket.on('disconnect', function(){
+    console.log('A player left');
+    delete players[socket.id];
+  });
 
   socket.on('movement', function(data) {
     var player = players[socket.id] || {};
