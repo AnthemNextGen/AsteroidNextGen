@@ -1,10 +1,11 @@
-export const privateButton = document.getElementById('privateButton');
-
-
-export function logMessage() {
-    alert("Private Button Clicked");
-}
-
 privateButton.addEventListener ('click', (event) => {
-    logMessage();
+    logMessage("PRIVATE");
 });
+
+publicButton.addEventListener ('click', (event) => {
+    logMessage("PUBLIC");
+});
+
+export function logMessage(mode) {
+    console.log(mode + " Button Clicked");
+}
