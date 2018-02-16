@@ -9,6 +9,15 @@ export const  ship = document.getElementById('ship');
 gameScreen.width = innerWidth;
 gameScreen.height = innerHeight;
 
+export const sceneWidth = gameScreen.width -10;
+export const sceneHeight = gameScreen.height - 10;
+
+
+export const setGameScene = function(){
+  gameCtx.clearRect(0, 0, gameScreen.width, gameScreen.height);
+  gameCtx.strokeRect(5,5, sceneWidth, sceneHeight);
+}
+
 document.addEventListener('keydown', function(event) {
   switch (event.keyCode) {
     case 65: // A to move Left
@@ -94,8 +103,7 @@ export class Game{
 
     this.io.on('state', function(players) {
         console.log(players);
-        gameCtx.clearRect(0, 0, innerWidth, innerHeight);
-        gameCtx.strokeRect(5,5, innerWidth-10, innerHeight-10);
+        setGameScene();
         for (var id in players) {
           var player = players[id];
           gameCtx.save();
