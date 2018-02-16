@@ -15,6 +15,7 @@ export const sceneHeight = gameScreen.height - 10;
 
 export const setGameScene = function(){
   gameCtx.clearRect(0, 0, gameScreen.width, gameScreen.height);
+  gameCtx.strokeStyle = "teal";
   gameCtx.strokeRect(5,5, sceneWidth, sceneHeight);
 }
 
@@ -108,7 +109,7 @@ export class Game{
           var player = players[id];
           gameCtx.save();
           gameCtx.rotate(player.angle *Math.PI/180);
-          drawShip(ship, player.x, player.y);
+          drawShip(ship, player.posX, player.posY);
           gameCtx.restore();
           gameCtx.fill();
         }
