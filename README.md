@@ -6,7 +6,5 @@
 
 ## Running
 
-* node server.js
-* This will start our server. For now we use a standalone server for socket connections.
-
-* npm start
+* node start
+* This will start our server.
