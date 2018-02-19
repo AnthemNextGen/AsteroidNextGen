@@ -89,6 +89,7 @@ document.addEventListener('keyup', function(event) {
 // Jesse will be pissed with this: Refactor it.
 export class Game{
   constructor(){
+    // Check if we are going to public or private game
     this.io = ioClient('localhost:5000');
   }
 
@@ -108,7 +109,19 @@ export class Game{
         for (var id in players) {
           var player = players[id];
           gameCtx.save();
-          gameCtx.translate(5 + innerWidth / 2, 5 + innerHeight / 2);
+          if(player.posX > sceneWidth){
+            player.posX = sceneWidth - 20;
+          }
+          if(player.posX < 5){
+            player.posX = 10;
+          }
+
+          if(player.posY < 5){
+            player.posY = 10;
+          }
+          if(player.posY > sceneHeight){
+            player.posY = sceneHeight - 25;
+          }
           gameCtx.rotate(player.angle *Math.PI/180);
           drawShip(ship, player.posX, player.posY);
           gameCtx.restore();

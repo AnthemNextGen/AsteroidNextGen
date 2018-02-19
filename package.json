@@ -6,7 +6,7 @@
   "scripts": {
     "tests": "babel-node spec/run.js",
     "build": "webpack",
-    "start": "concurrently --kill-others \"webpack-dev-server --output-public-path=/game/\" \" nodemon node server.js\""
+    "start": "concurrently --kill-others \"webpack-dev-server --output-public-path=/game/\" \"nodemon node server.js\""
   },
   "author": "Anthem NextGen",
   "license": "MIT",
