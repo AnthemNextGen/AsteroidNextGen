@@ -1,4 +1,4 @@
-import {Game,splashScreen, gameScreen, gameCtx} from './utils/game';
+import {Game,splashScreen, gameScreen, gameCtx, gameOver} from './utils/game';
 import {controls} from './utils/controls';
 
 document.body.addEventListener('keyup', (event)=>{
@@ -23,5 +23,18 @@ document.body.addEventListener('keyup', (event)=>{
       }, 2000);
 
 
+    } else if(event.keyCode == controls.endKey){
+      //show third (game over) screen
+       gameScreen.style.display = 'none';
+       gameOver.style.display ="block"
+
+
     }
 });
+
+export  function startGame(){
+  alert("show");
+  
+}
+
+
