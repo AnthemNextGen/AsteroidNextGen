@@ -8,7 +8,6 @@ body{
 }
 
 #title{
-  display: "none";
   font-family: "Lucida Console", "Arial";
   text-align: center;
   padding: 5% 2% 2% 0%;
@@ -40,6 +39,17 @@ table {
 
 #codeDiv {
   display: none;
+}
+
+#codeInput{
+  font-size: 2vw;
+  font-family: "Lucida Console", "Arial";
+  background-color: rgba(0, 0, 0, 0.12);
+  border: 2px solid rgb(255, 238, 0);
+  border-radius: 5px;
+  text-align: center;
+  color: white;
+  outline: none;
 }
 
 .menuButton{
