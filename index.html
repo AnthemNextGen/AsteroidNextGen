@@ -11,23 +11,32 @@
 
 <body>
   <div id="splash">
+    <div id="musicDiv">
+      <button id="play"><img src="assets/pauseVolumeIcon.png"  height="40" width="40"></button>
+    </div>
     <video id="video" class="video-page" poster="" src="assets/giphy.mp4" type="video/mp4" display="none" autoplay="true" loop></video>
     <div id="title">NextGen Asteroids</div>
     <div id="welcome">Welcome!</div>
-    
+
     <div id="tableDiv">
       <table>
         <tr>
           <td>
-            <button class="menuButton">PUBLIC</button>
+            <button id="publicButton" class="menuButton">PUBLIC</button>
           </td>
           <td>
-            <button class="menuButton">PRIVATE</button>
+            <button id="privateButton" class="menuButton">PRIVATE</button>
           </td>
+        </tr>
+        <tr>
+          <td colspan = "2">
+          <div  id="codeDiv">
+          <input id="codeInput" type="text" placeholder="GAME CODE">
+          </div>
+        </td>
         </tr>
       </table>
     </div>
-
     <div id="startPrompt">Press ENTER to Start</div>
     <div id="copyright">copyright © 2018, NextGen Broker Team</div>
   </div>
@@ -35,12 +44,12 @@
   </canvas>
   <!--Game Over screen  -->
   <div id="gameover">
-
   </div>
   <div style="display:none;">
   <img id="ship" src="assets/ship.jpg" >
 </div>
   <script src="game/app.bundle.js"></script>
+
 </body>
 
 </html>
