@@ -5,6 +5,8 @@ import { musicControl } from './utils/music';
 
 document.body.addEventListener('keyup', (event)=>{
     if(event.keyCode == controls.startKey){
+      let codeInput = document.getElementById('codeInput'); //get input value
+      console.log("Code has been entered: " + codeInput.value); //console log
       splashScreen.className += 'fadesplash';
       setTimeout(function(){
         splashScreen.style.display = 'none';

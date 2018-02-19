@@ -3,6 +3,7 @@ var displayStatus = document.getElementById("codeDiv");
 privateButton.addEventListener('click', (event) => {
     logMessage("PRIVATE");
     toggleCodeInput("block");
+    document.getElementById("codeInput").focus();
     document.getElementById("startPrompt").style.padding =  "7.3% 0% 0% 0%";
 });
 
