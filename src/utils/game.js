@@ -5,12 +5,9 @@ import {drawShip} from './ship';
 export const splashScreen = document.getElementById('splash');
 export const gameScreen = document.getElementById('game');
 export const gameCtx = gameScreen.getContext('2d');
-<<<<<<< HEAD
 export const gameOver = document.getElementById('gameover')
 
-=======
 export const  ship = document.getElementById('ship');
->>>>>>> dae0e744b5596c82ed6044cb2f5462d2917400f4
 gameScreen.width = innerWidth;
 gameScreen.height = innerHeight;
 
