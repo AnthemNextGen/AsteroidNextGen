@@ -15,12 +15,11 @@ document.body.addEventListener('keyup', (event)=>{
       */
       //let playerName = prompt('Enter Player Name');  We can fetch player name
       setTimeout(function(){
-        // gameCtx.fillStyle = "teal";
-        // gameCtx.fillRect(0,0,innerWidth,innerHeight);
         splashScreen.className = "";
         const game = new Game();
           game.play();
       }, 2000);
+<<<<<<< HEAD
 
 
     } else if(event.keyCode == controls.endKey){
@@ -29,6 +28,8 @@ document.body.addEventListener('keyup', (event)=>{
        gameOver.style.display ="block"
 
 
+=======
+>>>>>>> dae0e744b5596c82ed6044cb2f5462d2917400f4
     }
 });
 
