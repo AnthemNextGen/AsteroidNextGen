@@ -201,12 +201,9 @@ float: right;
     transform: scale(0);
     display: none;
   }}
-<<<<<<< HEAD
-=======
 
   #musicDiv {
     position:fixed; 
     bottom:0; 
     right:0;
   }
->>>>>>> master

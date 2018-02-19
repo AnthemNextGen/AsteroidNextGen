@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-import {Game,splashScreen, gameScreen, gameCtx, gameOver} from './utils/game';
-=======
 import {Game,splashScreen, gameScreen, gameCtx} from './utils/game';
 import menu from './utils/menu';
->>>>>>> master
 import {controls} from './utils/controls';
 import { musicControl } from './utils/music';
 
