@@ -6,17 +6,12 @@ import { musicControl } from './utils/music';
 document.body.addEventListener('keyup', (event)=>{
     if(event.keyCode == controls.startKey){
       splashScreen.className += 'fadesplash';
-      setTimeout(function(){
+      setTimeout(()=>{
         splashScreen.style.display = 'none';
         gameScreen.style.display = 'block';
       }, 2000);
-
-      /* At this point we dont want the game to start playing before we see
-          the game screen so we use a delay to give room for our transition
-          to occur
-      */
-      //let playerName = prompt('Enter Player Name');  We can fetch player name
-      setTimeout(function(){
+      // Delay for splash to fade away
+      setTimeout(()=>{
         splashScreen.className = "";
         const game = new Game();
           game.play();

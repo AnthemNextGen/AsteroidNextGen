@@ -15,7 +15,7 @@ io.on('connection', (socket)=> {
   socket.on('join', (msg)=>{
     console.log(msg);
     console.log(players);
-  })
+  });
 
   socket.on('disconnect', ()=>{
     console.log('A player left');
