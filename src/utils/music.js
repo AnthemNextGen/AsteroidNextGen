@@ -21,9 +21,9 @@ export function musicControl(audioUrl) {
   }
 }
 
-if (splashScreen || gameOverScreen) {
-  musicControl(audioUrl);
-}
+// if (splashScreen || gameOverScreen) {
+//   musicControl(audioUrl);
+// }
 
 if (audio.play) {
   document.addEventListener('keyup', (event) => {

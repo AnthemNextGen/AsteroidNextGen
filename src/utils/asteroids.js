@@ -1,11 +1,11 @@
 import { gameCtx, gameScreen } from '../utils/game';
 export function drawAsteroid() {
   //gameCtx.fillStyle = 'black';
-  for(var i = 0; i < 5; i++){
-    var x = Math.random()* innerWidth;
-    var y = Math.random()* innerHeight;
+  // for(var i = 0; i < 5; i++){
+  //   var x = Math.random()* window.innerWidth;
+  //   var y = Math.random()* window.innerHeight;
     gameCtx.beginPath();
-    gameCtx.moveTo(x, y);
+    gameCtx.moveTo(2*x, 3*y);
     gameCtx.lineTo(60, 30);
     gameCtx.lineTo(70, 50);
     gameCtx.lineTo(70, 60);
@@ -17,5 +17,5 @@ export function drawAsteroid() {
     gameCtx.closePath();
     gameCtx.strokeStyle = 'blue';
     gameCtx.stroke();
-  }
+  // }
 }
