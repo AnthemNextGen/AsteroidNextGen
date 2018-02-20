@@ -20,6 +20,10 @@ export function musicControl(audioUrl) {
   }
 }
 
+if (splashScreen || gameOverScreen) {
+  musicControl(audioUrl);
+}
+
 if (audio.play) {
   document.addEventListener('keyup', (event) => {
     if (event.keyCode == 13) {
@@ -33,10 +37,10 @@ if (audio.play) {
 button.addEventListener('click', (event) => {
   if (isSound == true) {
     musicControl(audioUrl);
-    button.innerHTML = soundPauseIcon;
+    button.innerHTML = soundPlayIcon;
   } else if (isSound == false) {
     musicControl(audioUrl);
-    button.innerHTML = soundPlayIcon;
+    button.innerHTML = soundPauseIcon;
   }
 })
 
