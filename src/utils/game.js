@@ -1,16 +1,26 @@
 import ioClient from 'socket.io-client';
-import { movements as movement } from './controls';
+import {movements as movement} from './controls';
+import {drawShip} from './ship';
 import { drawAsteroid } from './asteroids'
 
 export const splashScreen = document.getElementById('splash');
 export const gameScreen = document.getElementById('game');
 export const gameCtx = gameScreen.getContext('2d');
-export const ship = document.getElementById('ship');
-
+export const  ship = document.getElementById('ship');
 gameScreen.width = innerWidth;
 gameScreen.height = innerHeight;
 
-document.addEventListener('keydown', function (event) {
+export const sceneWidth = gameScreen.width -10;
+export const sceneHeight = gameScreen.height - 10;
+
+
+export const setGameScene = ()=>{
+  gameCtx.clearRect(0, 0, gameScreen.width, gameScreen.height);
+  gameCtx.strokeStyle = "teal";
+  gameCtx.strokeRect(5,5, sceneWidth, sceneHeight);
+}
+
+document.addEventListener('keydown', (event)=> {
   switch (event.keyCode) {
     case 65: // A to move Left
       movement.left = true;
@@ -30,19 +40,17 @@ document.addEventListener('keydown', function (event) {
       break;
     case 38:
       movement.up = true;
-      console.log('Move up');
       break;
     case 39:
       movement.clockwise = true;
       break;
     case 40:
       movement.down = true;
-      console.log('Move down');
       break;
   }
 });
 
-document.addEventListener('keyup', function (event) {
+document.addEventListener('keyup', (event)=> {
   switch (event.keyCode) {
     case 65: // A
       movement.left = false;
@@ -63,16 +71,14 @@ document.addEventListener('keyup', function (event) {
       movement.anticlockwise = false;
       break;
     case 38:
-      movement.up = false;
-      console.log('Move up');
-      break;
+        movement.up = false;
+        break;
     case 39:
       movement.clockwise = false;
       break;
     case 40:
-      movement.down = false;
-      //console.log('Move down');
-      break;
+        movement.down = false;
+        break;
   }
 });
 
@@ -89,24 +95,35 @@ export class Game {
     this.io.emit('new player');
     this.io.emit('join', "A player Joinned");
 
-    setInterval(function () {
+    setInterval(()=>{
       sock.emit('movement', movement);
     }, 1000 / 60);
 
-    this.io.on('state', function (players) {
-      console.log(players);
-      gameCtx.clearRect(0, 0, innerWidth, innerHeight);
-      gameCtx.strokeRect(5, 5, innerWidth - 10, innerHeight - 10);
-      for (var id in players) {
-        var player = players[id];
-        gameCtx.save();
-        gameCtx.rotate(player.angle * Math.PI / 180);
-        gameCtx.drawImage(ship, player.x, player.y);
-        // drawAsteroid();
-        gameCtx.restore();
-        gameCtx.fill();
-        drawAsteroid();
-      }
-    });
+    this.io.on('state', (players)=> {
+        console.log(players);
+        setGameScene();
+        for (var id in players) {
+          var player = players[id];
+          gameCtx.save();
+          if(player.posX > sceneWidth){
+            player.posX = sceneWidth - 20;
+          }
+          if(player.posX < 5){
+            player.posX = 10;
+          }
+
+          if(player.posY < 5){
+            player.posY = 10;
+          }
+          if(player.posY > sceneHeight){
+            player.posY = sceneHeight - 25;
+          }
+          gameCtx.rotate(player.angle *Math.PI/180);
+          drawShip(ship, player.posX, player.posY);
+          gameCtx.restore();
+          gameCtx.fill();
+          drawAsteroid();
+        }
+      });
   }
 }
