@@ -1,5 +1,5 @@
 import { splashScreen } from '../utils/game';
-import {controls} from '../utils/controls';
+import { controls } from '../utils/controls';
 export const audioUrl = "./assets/Videogame2.wav";
 export const audio = document.createElement('audio');
 audio.src = audioUrl;
@@ -21,16 +21,10 @@ export function musicControl(audioUrl) {
   }
 }
 
-// if (splashScreen || gameOverScreen) {
-//   musicControl(audioUrl);
-// }
-
 if (audio.play) {
   document.addEventListener('keyup', (event) => {
     if (event.keyCode == controls.startKey) {
-      setTimeout(() => {
-        audio.pause();
-      }, 2000);
+      audio.pause();
     }
   })
 }
