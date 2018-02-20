@@ -5,7 +5,7 @@ export function drawAsteroid() {
   //   var x = Math.random()* window.innerWidth;
   //   var y = Math.random()* window.innerHeight;
     gameCtx.beginPath();
-    gameCtx.moveTo(2*x, 3*y);
+    gameCtx.moveTo(30, 40);
     gameCtx.lineTo(60, 30);
     gameCtx.lineTo(70, 50);
     gameCtx.lineTo(70, 60);
