@@ -36,13 +36,13 @@ document.addEventListener('keydown', (event)=> {
       movement.down = true;
       break;
     case 37:
-      movement.anticlockwise = true;
+      movement.anticlockwise = false;
       break;
     case 38:
       movement.up = true;
       break;
     case 39:
-      movement.clockwise = true;
+      movement.clockwise = false;
       break;
     case 40:
       movement.down = true;
