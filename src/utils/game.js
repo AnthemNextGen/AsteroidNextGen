@@ -6,6 +6,8 @@ export const splashScreen = document.getElementById('splash');
 export const gameScreen = document.getElementById('game');
 export const codeInput = document.getElementById('codeInput');
 export const gameCtx = gameScreen.getContext('2d');
+export const gameOver = document.getElementById('gameover')
+
 export const  ship = document.getElementById('ship');
 gameScreen.width = innerWidth;
 gameScreen.height = innerHeight;

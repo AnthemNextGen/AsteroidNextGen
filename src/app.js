@@ -16,5 +16,20 @@ document.body.addEventListener('keyup', (event)=>{
         const game = new Game();
           game.play();
       }, 2000);
+
+
+    } else if(event.keyCode == controls.endKey){
+      //show third (game over) screen
+       gameScreen.style.display = 'none';
+       gameOver.style.display ="block"
+
+
     }
 });
+
+export  function startGame(){
+  alert("show");
+  
+}
+
+
