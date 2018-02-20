@@ -1,4 +1,5 @@
 import { splashScreen } from '../utils/game';
+import {controls} from '../utils/controls';
 export const audioUrl = "./assets/Videogame2.wav";
 export const audio = document.createElement('audio');
 audio.src = audioUrl;
@@ -26,7 +27,7 @@ if (splashScreen || gameOverScreen) {
 
 if (audio.play) {
   document.addEventListener('keyup', (event) => {
-    if (event.keyCode == 13) {
+    if (event.keyCode == controls.startKey) {
       setTimeout(() => {
         audio.pause();
       }, 2000);
