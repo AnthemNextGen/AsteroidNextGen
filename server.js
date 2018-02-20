@@ -2,6 +2,20 @@ var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
+var game_room;
+var games = [];
+
+io.use((socket, next)=>{
+    game_room = socket.handshake.query.token;
+    if(game_room){
+      console.log('Joinned Game room : ' + game_room);
+      socket.join(game_room); // Create private game room and joins it.
+      return next();
+    }else{
+      console.log('Join Public Game');  // Default to public games
+      return next();
+    }
+});
 
 var players = {};
 io.on('connection', (socket)=> {
