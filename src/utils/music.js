@@ -38,10 +38,10 @@ if (audio.play) {
 button.addEventListener('click', (event) => {
   if (isSound == true) {
     musicControl(audioUrl);
-    button.innerHTML = soundPlayIcon;
+    button.innerHTML = soundPauseIcon;
   } else if (isSound == false) {
     musicControl(audioUrl);
-    button.innerHTML = soundPauseIcon;
+    button.innerHTML = soundPlayIcon;
   }
 })
 
