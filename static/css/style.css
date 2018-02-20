@@ -106,21 +106,12 @@ video{
   width: 100%;
   z-index: -1
 }
-.inner-video{
-  border: 1px solid white;
-  top: 0;
-  left: 0;
-  position: relative;
-  transform: none; 
-  margin:40px;
-  height: 200px;
-  width:500px;
-
-}
 
 .fadesplash{
   animation: drawback 3s;
 }
+
+
 .text-center{
   text-align: center
 }
@@ -158,6 +149,23 @@ float: right;
   width: 100px;
   font-size: 16px
 }
+.video-page{
+  position: fixed;
+  width: 100%;
+  z-index: -1
+}
+.inner-video{
+  border: 1px solid white;
+  top: 0;
+  left: 0;
+  position: relative;
+  transform: none; 
+  margin:40px;
+  height: 200px;
+  width:500px;
+
+}
+
 
 @keyframes fadeIn {
   0% {

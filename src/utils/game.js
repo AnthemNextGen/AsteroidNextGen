@@ -4,9 +4,8 @@ import {drawShip} from './ship';
 
 export const splashScreen = document.getElementById('splash');
 export const gameScreen = document.getElementById('game');
+export const gameOver = document.getElementById('gameover');
 export const gameCtx = gameScreen.getContext('2d');
-export const gameOver = document.getElementById('gameover')
-
 export const  ship = document.getElementById('ship');
 gameScreen.width = innerWidth;
 gameScreen.height = innerHeight;
@@ -15,13 +14,13 @@ export const sceneWidth = gameScreen.width -10;
 export const sceneHeight = gameScreen.height - 10;
 
 
-export const setGameScene = function(){
+export const setGameScene = ()=>{
   gameCtx.clearRect(0, 0, gameScreen.width, gameScreen.height);
   gameCtx.strokeStyle = "teal";
   gameCtx.strokeRect(5,5, sceneWidth, sceneHeight);
 }
 
-document.addEventListener('keydown', function(event) {
+document.addEventListener('keydown', (event)=> {
   switch (event.keyCode) {
     case 65: // A to move Left
       movement.left = true;
@@ -41,19 +40,17 @@ document.addEventListener('keydown', function(event) {
       break;
     case 38:
       movement.up = true;
-      console.log('Move up');
       break;
     case 39:
       movement.clockwise = true;
       break;
     case 40:
       movement.down = true;
-      console.log('Move down');
       break;
   }
 });
 
-document.addEventListener('keyup', function(event) {
+document.addEventListener('keyup', (event)=> {
   switch (event.keyCode) {
     case 65: // A
       movement.left = false;
@@ -75,14 +72,12 @@ document.addEventListener('keyup', function(event) {
         break;
     case 38:
         movement.up = false;
-        console.log('Move up');
         break;
     case 39:
         movement.clockwise = false;
         break;
     case 40:
         movement.down = false;
-        //console.log('Move down');
         break;
   }
 });
@@ -100,11 +95,11 @@ export class Game{
     this.io.emit('new player');
     this.io.emit('join', "A player Joinned");
 
-    setInterval(function(){
+    setInterval(()=>{
       sock.emit('movement', movement);
     }, 1000/60);
 
-    this.io.on('state', function(players) {
+    this.io.on('state', (players)=> {
         console.log(players);
         setGameScene();
         for (var id in players) {

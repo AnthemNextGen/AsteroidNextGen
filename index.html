@@ -48,13 +48,11 @@
 
     <div class="game-over-page">
 
-
       <!-- inner video ## START -->
       <div class="text-center" >
         <img class="inner-video" poster="" src="assets/over.gif"display="none" autoplay="true" loop></img>
       </div>
       <!-- inner video ## END -->
-
 
 
       <!--<div class="text-center">
@@ -101,13 +99,12 @@
 
       <!-- score card ## END -->
 
-
       <!-- Game Actions ## START -->
 
       <div class="text-center game-actions" >
         <div class="start-btn-div">
 
-          <button onclick="startGame()" class="start-btn text-white">Play again</button>
+          <button onclick="gotoPage()" class="start-btn text-white">Play again</button>
         </div>
         <div class="end-btn-div">
 
@@ -119,13 +116,14 @@
 
     </div>
     <script>
-      function startGame() {
-        alert("show")
-      }
+      
     </script>
-    <script src="game/app.bundle.js"></script>
-    <script src="src/utils/ship.js"></script>
-    <script src="src/app.js"></script>
+
+  <div style="display:none;">
+  <img id="ship" src="assets/ship.jpg" >
+</div>
+  <script src="game/app.bundle.js"></script>
+
 </body>
 
 </html>
