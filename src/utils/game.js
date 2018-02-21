@@ -4,6 +4,7 @@ import {drawShip} from './ship';
 
 export const splashScreen = document.getElementById('splash');
 export const gameScreen = document.getElementById('game');
+export const codeInput = document.getElementById('codeInput');
 export const gameCtx = gameScreen.getContext('2d');
 export const  ship = document.getElementById('ship');
 gameScreen.width = innerWidth;
@@ -35,13 +36,13 @@ document.addEventListener('keydown', (event)=> {
       movement.down = true;
       break;
     case 37:
-      movement.anticlockwise = true;
+      movement.anticlockwise = false;
       break;
     case 38:
       movement.up = true;
       break;
     case 39:
-      movement.clockwise = true;
+      movement.clockwise = false;
       break;
     case 40:
       movement.down = true;
@@ -85,20 +86,29 @@ document.addEventListener('keyup', (event)=> {
 // Jesse will be pissed with this: Refactor it.
 export class Game{
   constructor(){
-    this.io = ioClient('localhost:5000');
+    let code = codeInput.value;
+    if(code){
+      this.io = ioClient('localhost:5000',{   // Join private Game room
+        query: {
+          token: code
+        }
+      });
+    }else{
+      this.io = ioClient('localhost:5000');  // Join Public Game
+    }
   }
 
   play(){
     // Game Code goes Here
     const sock = this.io;
-    this.io.emit('new player');
-    this.io.emit('join', "A player Joinned");
+    sock.emit('new player');
+    sock.emit('join', "A player Joinned");
 
     setInterval(()=>{
       sock.emit('movement', movement);
     }, 1000/60);
 
-    this.io.on('state', (players)=> {
+    sock.on('state', (players)=> {
         console.log(players);
         setGameScene();
         for (var id in players) {
@@ -117,7 +127,7 @@ export class Game{
           if(player.posY > sceneHeight){
             player.posY = sceneHeight - 25;
           }
-          gameCtx.rotate(player.angle *Math.PI/180);
+          gameCtx.rotate(player.angle * Math.PI/180);
           drawShip(ship, player.posX, player.posY);
           gameCtx.restore();
           gameCtx.fill();
