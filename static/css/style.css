@@ -9,22 +9,10 @@ body{
 
 #title{
   font-family: "Lucida Console", "Arial";
-  text-align: center;
-  padding: 5% 2% 2% 0%;
+  padding: 5% 0%;
   font-size: 8vw;
-  color: #000000;
   -webkit-text-stroke: 3px white;
   animation: fadeIn 5s;
-}
-
-#welcome{
-  font-family: "Lucida Console", "Arial";
-  text-align: center;
-  padding: 2% 0% 5% 0%;
-  font-size: 6vw;
-  color: #000000;
-  -webkit-text-stroke: 2px white;
-  animation: fadeIn 15s;
 }
 
 #tableDiv{
@@ -35,14 +23,26 @@ body{
 
 table {
   width: 100%;
+
 }
+
+/* td{
+  border:1px solid white;
+} */
+
+.column2{
+  width: 65%;
+}
+
 
 #codeDiv {
   display: none;
+  width: 20vw;
+  float: left;
 }
 
 #codeInput{
-  font-size: 2vw;
+  font-size: 1.75vw;
   font-family: "Lucida Console", "Arial";
   background-color: rgba(0, 0, 0, 0.12);
   border: 2px solid rgb(255, 238, 0);
@@ -52,15 +52,32 @@ table {
   outline: none;
 }
 
+.menuShip{
+height: 2.5vw;
+width: 2.5vw;
+}
+
+#menuShipPublic{
+  float: right;
+  display: none;
+}
+
+#menuShipPrivate{
+  float: right;
+  display: none;
+}
+
+
 .menuButton{
   background-color: rgba(255, 255, 255, 0.00);
   color: rgb(255, 255, 255);
   border: 2px solid white;
   border-radius: 5px;
-  padding: 1vw 5vw;
+  width: 20vw;
   font-family: "Lucida Console", "Arial";
   font-size: 2vw;
   animation: fadeIn 10s;
+  float: left;
 }
 
 .menuButton:hover{
@@ -80,7 +97,17 @@ table {
   font-size: 2vw;
   color: #000000;
   -webkit-text-stroke: 1px white;
-  animation: delayedFadeIn 5s;
+  animation: fadeIn 5s;
+}
+
+#enterPrompt{
+  font-family: "Lucida Console", "Arial";
+  text-align: center;
+  padding: 10% 0% 0% 0%;
+  font-size: 2vw;
+  color: #000000;
+  -webkit-text-stroke: 1px white;
+  animation: fadeIn 1s infinite alternate;
 }
 
 #copyright{
@@ -118,46 +145,19 @@ video{
 }
 
 .fadesplash{
-  animation: drawback 3s;
+  animation: fadeBack 2s;
 }
 
 @keyframes fadeIn {
-  0% {
+  from {
     opacity: 0;
   }
-  100% {
-    opacity: 1;
-  }
 }
 
-@keyframes delayedFadeIn {
-0% {
-  opacity: 0;
-}
-75% {
-  opacity: 0;
-}
-100% {
-  opacity: 1;
-}
-}
-
-@keyframes drawback{
+@keyframes fadeBack{
   0%{
-    transform : scale(1.1);
+    transform : scale(1);
   }
-  20%{
-    transform: scale(0.8);
-  }
-  50%{
-    opacity: 0.6;
-    transform: scale(0.5);
-  }
-  90%{
-    transform: scale(0.1);
-    opacity: 0.2;
-  }
-
   100%{
     opacity: 0;
     transform: scale(0);
