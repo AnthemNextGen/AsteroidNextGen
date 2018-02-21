@@ -1,23 +1,56 @@
-import {Game,splashScreen, gameScreen, gameCtx} from './utils/game';
-import {controls} from './utils/controls';
+import {Game, publicGame, privateBtn} from './game'; 
 
-document.body.addEventListener('keyup', (event)=>{
-    if(event.keyCode == controls.startKey){
-      splashScreen.className += 'fadesplash';
-      setTimeout(function(){
-        splashScreen.style.display = 'none';
-        gameScreen.style.display = 'block';
-      }, 2000);
+publicGame.addEventListener('click', function(){
+    handleSwitchScreen('game');
+});
 
-      /* At this point we dont want the game to start playing before we see
-          the game screen so we use a delay to give room for our transition
-          to occur
-      */
-      //let playerName = prompt('Enter Player Name');  We can fetch player name
-      setTimeout(function(){
-        splashScreen.className = "";
-        const game = new Game();
-          game.play();
-      }, 2000);
+
+privateBtn.addEventListener('click', function(){
+    const room = prompt('Enter Private Game room name');
+    if(room){
+      handleSwitchScreen('game'); 
+       
     }
 });
+
+function setState(targetState, updateObj){
+    return Object.assign({}, targetState, updateObj);
+}
+
+function setStateAndRender(targetState, updateObj){
+    updateApp(setState(targetState, updateObj));
+}
+
+
+//////////////////////// application
+
+// setting up the initial state of the application
+const appState = {
+    currentScreen : 'splash',
+  musicEnabled : false,
+  soundFXEnabled : false,
+  loading : true,
+};
+
+function updateApp(newState){
+   
+  const screenElements = document.getElementsByClassName('screen');
+  for (let elem of screenElements){ 
+    if (!elem.classList.contains('hidden')) {
+        elem.classList.add('hidden');
+    }
+  }
+    document.getElementsByClassName(newState.currentScreen)[0].classList.remove('hidden');
+}
+
+function switchScreen(targetScreen) {
+    const newState = setState(appState, {currentScreen : targetScreen});
+    return newState;
+}
+
+function handleSwitchScreen(targetScreen){
+    setStateAndRender(switchScreen(targetScreen));
+}
+
+updateApp(appState);
+

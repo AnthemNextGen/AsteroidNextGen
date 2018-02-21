@@ -1,24 +1,31 @@
-const path = require('path');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 module.exports = {
-  entry: {
-    app: [
-      'babel-polyfill',
-      './src/app.js',
+    entry: './src/app.js',
+    output: {
+        path: __dirname + '/dist/js',
+        filename: 'game.bundle.js'
+    },
+    module: {
+        loaders: [{
+            test: /\.js$/,
+            exclude: /(node_modules|bower_components)/,
+            use: {
+                loader: 'babel-loader',
+                options: {
+                    presets: ['env']
+                }
+            }
+        }]
+    },
+    plugins: [
+        new BrowserSyncPlugin({
+            host: 'localhost',
+            port: 3000,
+            server: { baseDir: ['dist'] },
+            files: ['./dist/*']
+        }),
     ],
-  },
-  output: {
-    path: path.resolve(__dirname, 'game'),
-    filename: 'app.bundle.js',
-  },
-  module: {
-    loaders: [{
-        test: /\.js?$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader',
-        query: {
-           presets: ['env', 'stage-0']
-        }
-    }]
-  }
-}
+    watch: true,
+    devtool: 'source-map'
+};
